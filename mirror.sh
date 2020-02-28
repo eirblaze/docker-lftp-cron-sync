@@ -10,7 +10,14 @@ TARGETFOLDER=$FTP_TARGET || '/'
 SOURCEFOLDER=$FTP_SOURCE || '/'
 
 lftp -e "
-set ssl:verify-certificate no;
+set ftp:ssl-auth TLS;
+set ftp:ssl-force true;
+set ftp:ssl-allow yes;
+set ftp:ssl-protect-list yes;
+set ftp:ssl-protect-data yes;
+set ftp:ssl-protect-fxp yes;
+set ssl:verify-certificate yes;
+set ssl:ca-file "/root/cert.pem";
 set sftp:auto-confirm yes;
 open $HOST;
 user $USER $PASS;
