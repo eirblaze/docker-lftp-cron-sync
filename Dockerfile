@@ -19,6 +19,8 @@ COPY entrypoint.sh /
 RUN chmod +x /entrypoint.sh
 
 COPY ./cert.pem /root/cert.pem
+COPY ./lftp-conf /root/lftp-conf
+COPY ./exclude-glob /root/exclude-glob
 
 ENTRYPOINT ["/entrypoint.sh"]
 
