@@ -18,6 +18,8 @@ COPY entrypoint.sh /
 
 RUN chmod +x /entrypoint.sh
 
+COPY ./cert.pem /root/cert.pem
+
 ENTRYPOINT ["/entrypoint.sh"]
 
 CMD ["crond", "-f", "-L -"]
