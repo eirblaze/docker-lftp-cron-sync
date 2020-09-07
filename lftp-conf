@@ -5,7 +5,6 @@ set ftp:ssl-protect-list yes;
 set ftp:ssl-protect-data yes;
 set ftp:ssl-protect-fxp yes;
 set ssl:verify-certificate yes;
-set ssl:ca-file "/root/cert.pem";
 set sftp:auto-confirm yes;
 open $FTP_HOST;
 user $FTP_USER $FTP_PASS;
